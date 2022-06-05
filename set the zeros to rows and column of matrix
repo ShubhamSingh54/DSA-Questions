@@ -1,0 +1,39 @@
+void setZeroes(vector<vector<int>>& matrix) {
+        int a=1;
+        int nr=matrix.size();
+        int nc=matrix[0].size();
+        for(int i=0;i<nr;i++)
+        {
+            if(matrix[i][0]==0) a=0;
+            
+            for(int j=1;j<nc;j++)
+            {
+                if(matrix[i][j]==0)
+                {
+                    matrix[i][0]=matrix[0][j]=0;
+                }
+            }
+        }
+        
+        
+        //treversing from back side
+             for(int i=nr-1;i>=0;i--)
+        { 
+            
+                 
+                 for(int j=nc-1;j>=1;j--)
+        {
+            
+                     
+                     if(matrix[i][0]==0||matrix[0][j]==0)
+                       matrix[i][j]=0;}
+            
+                      if(a==0)  matrix[i][0]=0;
+        
+        
+        
+
+        }
+        
+        
+    }
