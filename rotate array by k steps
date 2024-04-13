@@ -1,0 +1,17 @@
+rotate an integer array to the right by k steps 
+Given an integer array nums, rotate the array to the right by k steps, where k is non-negative.
+
+ here we uses the concept of revese the array / vector 
+(1) reverse the whole array 
+(2) reverse the arry from begining to k-1 index
+(3) now reverse the second parr of array from index k to n-1;
+solution -----
+ void rotate(vector<int>& nums, int k) {
+        k=k% nums.size();
+        reverse(nums.begin(), nums.end());
+         reverse(nums.begin(), (nums.begin()+(k)));
+       
+         reverse(nums.begin()+k, nums.end());
+       
+       
+        
