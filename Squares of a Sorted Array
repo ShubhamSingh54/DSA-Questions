@@ -1,0 +1,32 @@
+ Squares of a Sorted Array 
+use two pointer approach 
+
+vector<int> sortedSquares(vector<int>& nums) {
+        int l,r,i,n;
+       int ls,rs;
+         n=nums.size();
+        vector<int> res(n);
+        
+        l=0;
+        r=n-1;
+        i=n-1;
+       
+        while(l<=r)
+        {
+          ls=nums[l]*nums[l];
+            rs=nums[r]*nums[r];
+            if(rs>ls)
+            {
+                res[i]=rs;
+                r--;
+            }
+            else
+            {
+             res[i]=ls;
+             l++;
+            }
+            i--;
+        }
+        return res;
+        
+    }
