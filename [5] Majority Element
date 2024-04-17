@@ -12,4 +12,28 @@ Example 2:
 
 Input: nums = [2,2,1,1,1,2,2]
 Output: 2
+solution 
+int majorityElement(vector<int>& nums) {
+        
+        int me=nums[0];
+        int fq=0;
+        for(int i=0;i<nums.size();i++)
+        {
+
+            if(me==nums[i])
+            {
+                fq++;
+            }
+            else
+            {
+                fq--;
+            }
+            
+            if(fq==0)
+            {
+                me=nums[i];
+                fq=1;
+            }
+        }
+        return me;
  
