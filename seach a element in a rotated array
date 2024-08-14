@@ -1,0 +1,59 @@
+There is an integer array nums sorted in ascending order (with distinct values).
+
+Prior to being passed to your function, nums is possibly rotated at an unknown pivot index k (1 <= k < nums.length) such that the resulting array is [nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]] (0-indexed). For example, [0,1,2,4,5,6,7] might be rotated at pivot index 3 and become [4,5,6,7,0,1,2].
+
+Given the array nums after the possible rotation and an integer target, return the index of target if it is in nums, or -1 if it is not in nums.
+
+You must write an algorithm with O(log n) runtime complexity.
+
+// solution describtion ---->
+here we use the binary search. it has time complexity of log(n);
+check the array left sorted or write sorted and apply logic according to it.
+
+code---->
+int search(vector<int>& nums, int target) {
+        int l=0;
+        int h=nums.size()-1;
+        int m;
+       
+    
+        while(l<=h){
+             m=l+(h-l)/2;
+        if(nums[m]==target)
+        {
+            return m;
+            break;
+        }
+            
+        if(nums[l]<=nums[m]) //left sorted 
+        {
+            if(nums[l]<=target&&target<=nums[m])
+            {h=m-1;
+            }
+        else 
+        {
+         l=m+1;
+            
+        }
+        }
+          else /// right sorted
+          {
+              
+              if(nums[m]<=target&&target<=nums[h])
+        {
+            l=m+1;
+        }
+              else
+              {
+                  h=m-1;
+
+              }
+          }
+            
+        }
+       
+       
+        return -1;
+    }
+
+ 
