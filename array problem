@@ -35,3 +35,10 @@ int minJumps(int arr[], int n){
         
         return jumps;
 }
+
+
+The function tracks the farthest index that can be reached and the end of the current jump range.
+It increments the jump count each time the end of the current range is reached and updates the range based on the farthest reachable index.
+If at any point the current index equals the farthest index, it means we're stuck, and the function returns -1.
+The loop runs until the second-to-last index, and the function returns the total number of jumps required to reach or surpass the last index.
+This approach is efficient and works in O(n) time complexity.
