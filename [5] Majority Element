@@ -19,12 +19,12 @@ frequency by one and in false condition decreament the value of frequency
 and also compare if the value of frequency becomes 0 then change our majority element to the array element and also initialize the value of frequency one.
 int majorityElement(vector<int>& nums) {
         
-        int me=nums[0];
+        int m=nums[0];
         int fq=0;
         for(int i=0;i<nums.size();i++)
         {
 
-            if(me==nums[i])
+            if(m==nums[i])
             {
                 fq++;
             }
@@ -35,9 +35,9 @@ int majorityElement(vector<int>& nums) {
             
             if(fq==0)
             {
-                me=nums[i];
+                m=nums[i];
                 fq=1;
             }
         }
-        return me;
+        return m;
  
